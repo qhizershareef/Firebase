@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <input type="text" placeholder="Name" id="name" required>
+        <input type="number" placeholder="Phone No" id="Phone" required>
+        <input type="tel" placeholder="Optional No" id="Optional">
+        <input type="email" placeholder="Email" id="Email" required>
+        <input type="tel" placeholder="Referral No" id="Referral">
+        <p><strong><i>---Please upload prescription.</i></strong></p>
+        <input type="file" id="files" multiple required />
+        <input type="text" placeholder="Address" id='Address' required>
+        <p><strong><i>Please select mode of payment.</i></strong></p>
+        <input type="radio" name="payment" value="Upi">UPI<br>
+        <input type="radio" name="payment" value="Net Banking">Net Banking <br>
+        <input type="radio" name="payment" value="Cash on Delivery" required>Cash on delivery. <br>
+        <img src="image.jpeg" alt="Upi" class="img">
+
+        <input type="submit" value="submit" id="send">
+        <p id="uploading"></p>
+        <progress value="0" max="100" id="progress"></progress>
+        </form>  
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+
+
+    <script>
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC31nHQjijQIE0SS7OAkT9wSiLu0KFqJKY",
+            authDomain: "dictionary-voice-pro.firebaseapp.com",
+            databaseURL: "https://dictionary-voice-pro.firebaseio.com",
+            projectId: "dictionary-voice-pro",
+            storageBucket: "dictionary-voice-pro.appspot.com",
+            messagingSenderId: "506071794269",
+            appId: "1:506071794269:web:abe157adf556c08b0c83b4",
+            measurementId: "G-ZPVFLNJQD9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        //  var storageRef = firebase.storage().ref();
+        var db = firebase.firestore();
+    </script>
+
+<!--
+    <script src="upload.js"></script>
+    <script src="firestore.js"></script>
+-->
+    <script src="upload.js"></script>
+</body>
+
+</html>
